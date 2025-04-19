@@ -63,7 +63,7 @@ const data = {
         },
         {
           title: "SIP Agents",
-          url: "/sip-network/sip-agents",
+          url: "/sip-network/agents",
         },
       ],
     },
@@ -77,7 +77,7 @@ const data = {
     },
     {
       title: "API Keys",
-      url: "/api-keys"
+      url: "/keys"
     },
     {
       title: "Monitoring",
