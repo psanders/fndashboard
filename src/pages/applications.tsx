@@ -72,13 +72,14 @@ export default function ApplicationsPage() {
   const [applications, setApplications] = useState<Application[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState("")
-  const { client } = useAuth()
+  const { client, workspaceAccessKeyId } = useAuth()
 
   useEffect(() => {
     const loadApplications = async () => {
       try {
         setLoading(true)
 
+        client.setAccessKeyId(workspaceAccessKeyId)
         const applications = new Applications(client)
 
         const response = await applications.listApplications({
@@ -94,7 +95,9 @@ export default function ApplicationsPage() {
       }
     }
 
-    loadApplications()
+    if (client) {
+      loadApplications()
+    }
   }, [search, client])
 
   return (
