@@ -31,7 +31,7 @@ export function LoginForm({
 
     try {
       await signIn(email, password)
-      navigate("/dashboard")
+      navigate("/")
     } catch (err) {
       setError("Invalid email or password")
     } finally {

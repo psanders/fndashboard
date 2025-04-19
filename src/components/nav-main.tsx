@@ -55,7 +55,7 @@ export function NavMain({
                 className="group/collapsible"
                 onOpenChange={(isOpen) => setOpenStates(prev => ({ ...prev, [item.title]: isOpen }))}
               >
-                <>
+                <div>
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton tooltip={item.title}>
                       {item.icon && <item.icon />}
@@ -78,7 +78,7 @@ export function NavMain({
                       ))}
                     </SidebarMenuSub>
                   </CollapsibleContent>
-                </>
+                </div>
               </Collapsible>
             ) : (
               <SidebarMenuButton asChild tooltip={item.title}>
