@@ -15,57 +15,39 @@ interface Application {
 
 const columns = [
   {
+    accessorKey: "ref",
+    header: ({ column }: { column: any }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Ref
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+    cell: ({ row }: { row: any }) => {
+      const ref = row.getValue("ref")
+      return ref ? ref.slice(-10) : ""
+    },
+  },
+  {
     accessorKey: "name",
-    header: ({ column }: { column: any }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Name
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
+    header: "Name",
   },
   {
-    accessorKey: "description",
-    header: "Description",
-  },
-  {
-    accessorKey: "createdAt",
-    header: ({ column }: { column: any }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Created
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
+    accessorKey: "type",
+    header: "Type",
     cell: ({ row }: { row: any }) => {
-      return new Date(row.getValue("createdAt") * 1000).toLocaleDateString()
+      const type = row.getValue("type")
+      return type ? type.charAt(0).toUpperCase() + type.slice(1).toLowerCase() : ""
     },
   },
   {
-    accessorKey: "updatedAt",
-    header: ({ column }: { column: any }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Updated
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-    cell: ({ row }: { row: any }) => {
-      return new Date(row.getValue("updatedAt") * 1000).toLocaleDateString()
-    },
-  },
+    accessorKey: "endpoint",
+    header: "Endpoint"
+  }
 ]
 
 export default function ApplicationsPage() {
@@ -86,6 +68,8 @@ export default function ApplicationsPage() {
           pageSize: 100,
           pageToken: "",
         })
+
+        console.log(response.items)
 
         setApplications(response.items)
       } catch (error) {
