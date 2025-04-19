@@ -83,15 +83,15 @@ export function List<TData, TValue>({
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between">
-        <div>
+      <div className="flex flex-col gap-4 mb-8">
+        <div className="flex items-center justify-between">
           <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
-          <p className="text-muted-foreground">{description}</p>
+          <Button variant="outline" onClick={() => navigate(createPath)}>
+            Create {title.slice(0, -1)}
+            <Plus className="mr-2 h-4 w-4" />
+          </Button>
         </div>
-        <Button onClick={() => navigate(createPath)}>
-          <Plus className="mr-2 h-4 w-4" />
-          Create {title}
-        </Button>
+        <p className="text-muted-foreground max-w-xl">{description}</p>
       </div>
       <div className="flex items-center py-4">
         {onSearch && (

@@ -8,9 +8,8 @@ import { useAuth } from "@/lib/auth"
 interface Application {
   ref: string
   name: string
-  description?: string
-  createdAt: Date
-  updatedAt: Date
+  type: string
+  endpoint: string
 }
 
 const columns = [
@@ -30,7 +29,7 @@ const columns = [
     cell: ({ row }: { row: any }) => {
       const ref = row.getValue("ref")
       return ref ? ref.slice(-10) : ""
-    },
+    }
   },
   {
     accessorKey: "name",
