@@ -39,50 +39,49 @@ const data = {
   navMain: [
     {
       title: "Overview",
-      url: "#"
+      url: "/overview"
     },
     {
       title: "Applications",
-      url: "#",
-      isActive: true
+      url: "/applications"
     },
     {
       title: "SIP Network",
-      url: "#",
+      url: "/sip-network",
       items: [
         {
           title: "Trunks",
-          url: "#",
+          url: "/sip-network/trunks",
         },
         {
           title: "Numbers",
-          url: "#",
+          url: "/sip-network/numbers",
         },
         {
           title: "Domains",
-          url: "#",
+          url: "/sip-network/domains",
         },
         {
           title: "SIP Agents",
-          url: "#",
+          url: "/sip-network/sip-agents",
         },
       ],
     },
     {
       title: "Storage",
-      url: "#"
+      url: "/storage"
     },
     {
       title: "Secrets",
-      url: "#"
+      url: "/secrets"
     },
     {
       title: "API Keys",
-      url: "#"
+      url: "/api-keys"
     },
     {
       title: "Monitoring",
-      url: "#"
+      url: "/monitoring"
     }
   ]
 }
