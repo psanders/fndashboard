@@ -85,7 +85,7 @@ export default function ApplicationsPage() {
 
   return (
     <List
-      title="Applications"
+      title="Voice Applications"
       description="Use this section to connect your Dialogflow, IBM Watson, and OpenAI Assistants with your numbers."
       createPath="/applications/create"
       columns={columns}

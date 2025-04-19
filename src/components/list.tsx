@@ -85,7 +85,7 @@ export function List<TData, TValue>({
     <div className="w-full">
       <div className="flex flex-col gap-4 mb-8">
         <div className="flex items-center justify-between">
-          <h2 className="text-3xl font-bold tracking-tight">{title}</h2>
+          <h2 className="text-2xl font-bold tracking-tight">{title}</h2>
           <Button variant="outline" onClick={() => navigate(createPath)}>
             Create {title.slice(0, -1)}
             <Plus className="mr-2 h-4 w-4" />
