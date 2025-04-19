@@ -36,7 +36,7 @@ export function NavMain({
   const [openStates, setOpenStates] = useState<Record<string, boolean>>(
     items.reduce((acc, item) => {
       if (item.items) {
-        acc[item.title] = true
+        acc[item.title] = false
       }
       return acc
     }, {} as Record<string, boolean>)
@@ -51,7 +51,7 @@ export function NavMain({
             {item.items ? (
               <Collapsible 
                 asChild 
-                defaultOpen={true} 
+                defaultOpen={false} 
                 className="group/collapsible"
                 onOpenChange={(isOpen) => setOpenStates(prev => ({ ...prev, [item.title]: isOpen }))}
               >
